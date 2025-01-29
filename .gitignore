@@ -163,4 +163,4 @@ cython_debug/
 
 
 */migrations/*
-models/migrations/*
+cinema/models/migrations/*
