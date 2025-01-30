@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Country,City,Cinema,Hall,Seat,Movie,Show
+from .models import Country,City,Cinema,Hall,Seat,Movie,Show,Booking
 
 
 admin.site.register(Country)
@@ -9,3 +9,4 @@ admin.site.register(Hall)
 admin.site.register(Seat)
 admin.site.register(Movie)
 admin.site.register(Show)
+admin.site.register(Booking)
