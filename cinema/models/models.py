@@ -49,6 +49,26 @@ class Cinema(models.Model):
         
     def __str__(self):
         return f'{self.name}'
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "phone_number": self.phone_number,
+            "email": self.email,
+            "address": self.address,
+            "city": self.city.name,
+            "country" : self.city.country.name,  
+            "work_start_time": self.start_time.strftime("%H:%M"),  
+            "work_end_time": self.end_time.strftime("%H:%M"), 
+        }
+    
+    @classmethod
+    def get_all_cinemas(cls):
+        cinemas = [cinema.to_dict() for cinema in Cinema.objects.all()]
+        return cinemas
+
+
 
 
 class Hall(models.Model):
@@ -66,6 +86,17 @@ class Hall(models.Model):
     def __str__(self):
         return f"{self.name} - {self.cinema_id.name}"
 
+    def to_dict(self):
+        return {
+            "hall_id" : self.id,
+            "cinema_id": self.cinema_id.id,
+            "name" : self.name
+        }
+    
+    @classmethod
+    def get_hall_by_cinema_id(cls,cinema_id):
+        halls = [hall.to_dict() for hall in cls.objects.filter(cinema_id_id=cinema_id)]
+        return halls
 
 class Seat(models.Model):
 
@@ -109,6 +140,16 @@ class Seat(models.Model):
     def __str__(self):
         return f"{self.hall.name}, Row: {self.row_number}, Seat: {self.seat_number}"
     
+    def to_dict(self):
+        return {
+            "seat_id": self.id,
+            "hall_id" : self.hall.id,
+            "hall_name" : self.hall.name,
+            "row_number" : self.row_number,
+            "seat_number" : self.seat_number,
+            "seat_order_number" :  self.seat_order,
+            "seat_type" : self.seat_type
+        }
 
 class Movie(models.Model):
     name = models.CharField(max_length=255)
@@ -139,7 +180,7 @@ class Show(models.Model):
         cinema_start_time = self.hall_id.cinema_id.start_time
         cinema_end_time = self.hall_id.cinema_id.end_time
 
-        if not cinema_start_time < self.time < cinema_end_time:
+        if not cinema_start_time <= self.time < cinema_end_time:
             raise ValidationError(
                 f"Can't add a show outside the cinema's working hours ({cinema_start_time} - {cinema_end_time}).",
                 code='invalid_time'
@@ -167,8 +208,79 @@ class Show(models.Model):
                     f"but there is already a show from {show.time} to {existing_show_end_time}.",
                     code='overlap_error'
                 )
+    
 
-        
+    def to_dict(self):
+
+        start_datetime = datetime.combine(self.date, self.time)
+
+        end_datetime = start_datetime + timedelta(minutes=self.movie_id.duration)
+
+        return {
+            "show_id" : self.id,
+            "hall_id" : self.hall_id.id,
+            "hall_name" : self.hall_id.name,
+            "movie_name" : self.movie_id.name,
+            "movie_description" : self.movie_id.description,
+            "duration" : self.movie_id.duration,
+            "genre" : self.movie_id.genre,
+            "date" : self.date.strftime('%Y:%m:%d'),
+            "start_time" : self.time.strftime('%H:%M'),
+            "end_time" :  end_datetime.strftime('%H:%M'), 
+            "standard_price" : self.standard_price,
+            "vip_price" : self.vip_price,
+        }
+
+
+
+
+    @classmethod
+    def get_upcoming_shows(cls,hall_id):
+        now = timezone.now()  
+        current_datetime = now.replace(second=0, microsecond=0)
+
+        # Filter upcoming shows (date in the future or if today, time should be after the current time)
+        upcoming_show_objects = cls.objects.filter(
+            hall_id_id=hall_id,
+            date__gt=now.date()  ) | cls.objects.filter(hall_id_id=hall_id,date=now.date(),  time__gt=current_datetime.time()  )
+
+        upcoming_shows = [show.to_dict() for show in upcoming_show_objects]
+
+        return upcoming_shows
+
+
+    def get_all_seats(self):
+        # Get all seats for the hall where the show is happening
+        all_seats = Seat.objects.filter(hall=self.hall_id)
+
+        # Check if the seat is booked by querying the Booking model
+        available_seats = []
+        booked_seats = []
+        for seat in all_seats:
+            seat_dictionary = seat.to_dict()
+
+            # If no booking exists for the seat and show, it's available
+            if not Booking.objects.filter(show_id=self, seat_id=seat).exists():
+                seat_dictionary["is_available"] = True
+                
+            else:
+                seat_dictionary["is_available"] = False
+            seat_dictionary["show_id"] = self.id
+            available_seats.append(seat_dictionary)
+
+                            
+        return available_seats
+
+    def is_started(self):
+        start_datetime = datetime.combine(self.date, self.time)
+        now = timezone.now()
+
+        if now >= start_datetime:
+            return True
+        else:
+            return False
+ 
+
     def save(self, *args, **kwargs):
         self.full_clean()
         self.updated_at = timezone.now()
