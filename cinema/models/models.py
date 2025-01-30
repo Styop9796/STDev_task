@@ -224,7 +224,7 @@ class Show(models.Model):
             "movie_description" : self.movie_id.description,
             "duration" : self.movie_id.duration,
             "genre" : self.movie_id.genre,
-            "date" : self.date.strftime('%Y:%m:%d'),
+            "date" : self.date.strftime('%Y/%m/%d'),
             "start_time" : self.time.strftime('%H:%M'),
             "end_time" :  end_datetime.strftime('%H:%M'), 
             "standard_price" : self.standard_price,
@@ -255,7 +255,6 @@ class Show(models.Model):
 
         # Check if the seat is booked by querying the Booking model
         available_seats = []
-        booked_seats = []
         for seat in all_seats:
             seat_dictionary = seat.to_dict()
 
@@ -266,6 +265,11 @@ class Show(models.Model):
             else:
                 seat_dictionary["is_available"] = False
             seat_dictionary["show_id"] = self.id
+            if seat_dictionary.get("seat_type") == "vip":
+                seat_dictionary["price"] = self.vip_price
+            else:
+                seat_dictionary["price"] = self.standard_price
+
             available_seats.append(seat_dictionary)
 
                             

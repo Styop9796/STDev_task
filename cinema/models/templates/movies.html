@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Shows</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+            padding-top: 20px;
+        }
+
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        /* Loading Spinner */
+        .loading {
+            text-align: center;
+            font-size: 18px;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Show Details Card */
+        .show-card {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .show-card:hover {
+            transform: scale(1.03);
+        }
+
+        .show-card h3 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .show-card p {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+
+        .show-card .info {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Movie Shows Information</h1>
+        <div id="loading" class="loading">Loading...</div>
+        <div id="show-list"></div>
+    </div>
+
+    <script>
+        // Get the hall_id from the URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const hallId = urlParams.get('hall_id');
+        const apiUrl = `http://127.0.0.1:8000/api/get_shows/?hall_id=${hallId}`;
+
+        const loadingElement = document.getElementById('loading');
+        const showListElement = document.getElementById('show-list'); // Container for the show list
+
+        // Function to fetch data from the API and render it
+        function fetchShowData() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Hide loading indicator
+                    loadingElement.style.display = 'none';
+
+                    if (data.status === 200 && data.data.length > 0) {
+                        // Render each show's details
+                        data.data.forEach(show => {
+                            const showCard = document.createElement('div');
+                            showCard.classList.add('show-card');
+
+                            // HTML for each show card
+                            showCard.innerHTML = `
+                                <h3>${show.movie_name}</h3>
+                                <p><strong>Hall:</strong> ${show.hall_name}</p>
+                                <p><strong>Duration:</strong> ${show.duration} minutes</p>
+                                <p><strong>Genre:</strong> ${show.genre}</p>
+                                <p><strong>Date:</strong> ${show.date}</p>
+                                <p><strong>Start Time:</strong> ${show.start_time}</p>
+                                <p><strong>End Time:</strong> ${show.end_time}</p>
+                                <p><strong>Standard Price:</strong> ${show.standard_price} AMD</p>
+                                <p><strong>VIP Price:</strong> ${show.vip_price} AMD</p>
+                            `;
+
+                            showCard.addEventListener('click', () => {
+                                window.location.href = `http://127.0.0.1:8000/seats/?show_id=${show.show_id}`;
+                            });
+
+
+                            // Append the show card to the show list container
+                            showListElement.appendChild(showCard);
+                        });
+                    } else {
+                        showListElement.innerHTML = "<p>No shows available for this hall.</p>";
+                    }
+                })
+                .catch(error => {
+                    loadingElement.style.display = 'none';
+                    showListElement.innerHTML = "<p>Error loading shows data.</p>";
+                    console.error("Error fetching data: ", error);
+                });
+        }
+
+        // Call the function to fetch and display the shows on page load
+        fetchShowData();
+    </script>
+</body>
+
+</html>

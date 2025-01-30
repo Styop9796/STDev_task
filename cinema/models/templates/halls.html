@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halls Information</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        /* Loading Spinner */
+        .loading {
+            text-align: center;
+            font-size: 18px;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Hall Details Card */
+        .hall-card {
+            display: flex;
+            justify-content: space-between;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .hall-card:hover {
+            transform: scale(1.03);
+        }
+
+        .hall-card h2 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .hall-card p {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+
+        .hall-card .info {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        /* Button */
+        .hall-card .button {
+            display: inline-block;
+            background-color: #2980b9; /* Button color same as before */
+            color: white;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .hall-card .button:hover {
+            background-color: #3498db; /* Hover color */
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hall's</h1>
+        <div id="loading" class="loading">Loading...</div>
+        <div id="hall-list"></div>
+    </div>
+
+    <script>
+        // Get the cinema_id from the URL query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const cinemaId = urlParams.get('cinema_id');
+        const apiUrl = `http://127.0.0.1:8000/api/get_halls/?cinema_id=${cinemaId}`;
+
+        const loadingElement = document.getElementById('loading');
+        const hallListElement = document.getElementById('hall-list'); // Container for the hall list
+
+        // Function to fetch data from the API and render it
+        function fetchHallData() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Hide loading indicator
+                    loadingElement.style.display = 'none';
+
+                    if (data.status === 200 && data.data.length > 0) {
+                        // Render each hall's details
+                        data.data.forEach(hall => {
+                            const hallCard = document.createElement('div');
+                            hallCard.classList.add('hall-card');
+
+                            // HTML for each hall card
+                            hallCard.innerHTML = `
+                                <h2>${hall.name}</h2>
+                            `;
+
+                            hallCard.addEventListener('click', () => {
+                                window.location.href = `http://127.0.0.1:8000/shows/?hall_id=${hall.hall_id}`;
+                            });
+
+                            // Append the hall card to the hall list container
+                            hallListElement.appendChild(hallCard);
+                        });
+                    } else {
+                        hallListElement.innerHTML = "<p>No halls found.</p>";
+                    }
+                })
+                .catch(error => {
+                    loadingElement.style.display = 'none';
+                    hallListElement.innerHTML = "<p>Error loading data.</p>";
+                    console.error("Error fetching data: ", error);
+                });
+        }
+
+        // Call the function to fetch and display the halls on page load
+        fetchHallData();
+    </script>
+</body>
+
+</html>

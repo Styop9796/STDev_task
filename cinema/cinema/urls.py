@@ -16,8 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from .frontend import cienema_page,halls,moveies,seats
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('models.urls')),
+    path('cinemas/',cienema_page),
+    path('halls/',halls),
+    path('shows/',moveies),
+    path('seats/',seats)
 ]

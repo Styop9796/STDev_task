@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Information</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            background-color: white;
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        /* Loading Spinner */
+        .loading {
+            text-align: center;
+            font-size: 18px;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Cinema Details Card */
+        .cinema-card {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .cinema-card:hover {
+            transform: scale(1.03);
+        }
+
+        .cinema-card h2 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .cinema-card p {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+
+        .cinema-card .info {
+            font-weight: bold;
+            color: #34495e;
+        }
+
+        /* Button */
+        .cinema-card .button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            margin-top: 10px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .cinema-card .button:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cinema's</h1>
+        <div id="loading" class="loading">Loading...</div>
+        <div id="cinema-list"></div>
+    </div>
+
+    <script>
+        const apiUrl = "http://127.0.0.1:8000/api/get_cinemas/";
+        const loadingElement = document.getElementById('loading');
+        const cinemaListElement = document.getElementById('cinema-list'); // Container for the cinema list
+
+        // Function to fetch data from the API and render it
+        function fetchCinemaData() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    // Hide loading indicator
+                    loadingElement.style.display = 'none';
+
+                    if (data.status === 200 && data.data.length > 0) {
+                        // Render each cinema's details
+                        data.data.forEach(cinema => {
+                            const cinemaCard = document.createElement('div');
+                            cinemaCard.classList.add('cinema-card');
+
+                            // Here we create the HTML for each cinema card
+                            cinemaCard.innerHTML = `
+                                <h2>${cinema.name}</h2>
+                                <p><span class="info">Phone:</span> ${cinema.phone_number}</p>
+                                <p><span class="info">Email:</span> ${cinema.email}</p>
+                                <p><span class="info">Address:</span> ${cinema.address}</p>
+                                <p><span class="info">City:</span> ${cinema.city}</p>
+                                <p><span class="info">Country:</span> ${cinema.country}</p>
+                                <p><span class="info">Working Hours:</span> ${cinema.work_start_time} - ${cinema.work_end_time}</p>
+                                
+                            `;
+
+
+                            cinemaCard.addEventListener('click', () => {
+                                window.location.href = `http://127.0.0.1:8000/halls/?cinema_id=${cinema.id}`;
+                            });
+
+                            // Append the cinema card to the cinema list container
+                            cinemaListElement.appendChild(cinemaCard);
+                        });
+                    } else {
+                        cinemaListElement.innerHTML = "<p>No cinemas found.</p>";
+                    }
+                })
+                .catch(error => {
+                    loadingElement.style.display = 'none';
+                    cinemaListElement.innerHTML = "<p>Error loading data.</p>";
+                    console.error("Error fetching data: ", error);
+                });
+        }
+
+        // Call the function to fetch and display the cinemas on page load
+        fetchCinemaData();
+    </script>
+</body>
+
+</html>

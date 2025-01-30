@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Reservation</title>
+    <style>
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #333;
+            padding-top: 20px;
+        }
+
+        .container {
+            background-color: white;
+            width: 100%; /* Full-width container */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        /* Loading Spinner */
+        .loading {
+            text-align: center;
+            font-size: 18px;
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        /* Table Layout */
+        .seat-table {
+            width: 100%;
+            table-layout: fixed;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .seat-table th,
+        .seat-table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+
+        .seat-table th {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .seat {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            background-color: #ecf0f1;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+
+        }
+
+        .seat.available {
+            background-color: #2ecc71;
+        }
+
+        .seat.unavailable {
+            background-color: #e74c3c;
+        }
+
+        .seat.selected {
+            background-color: #f39c12;
+        }
+
+        .seat:hover {
+            background-color: #bdc3c7;
+        }
+
+        .seat.selected:hover {
+            background-color: #f39c12;
+        }
+
+        .seat-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .seat-details {
+            padding: 10px;
+            width: 100%;
+            font-size: 12px;
+            color: #000000;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .seat-table th,
+            .seat-table td {
+                padding: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Seat Reservation</h1>
+        <div id="loading" class="loading">Loading seats...</div>
+        <table id="seat-table" class="seat-table"></table>
+        <div id="seat-info" class="seat-info"></div>
+    </div>
+
+    <script>
+        const apiUrl = `http://127.0.0.1:8000/api/get_seats/?show_id=1`; // Use appropriate show_id
+        const loadingElement = document.getElementById('loading');
+        const seatTableElement = document.getElementById('seat-table');
+        const seatInfoElement = document.getElementById('seat-info');
+        let selectedSeat = null; // Track selected seat
+
+        // Function to fetch seat data and render the table
+        function fetchSeatData() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    loadingElement.style.display = 'none';
+                    if (data.status === 200 && data.data.length > 0) {
+                        renderSeatTable(data.data);
+                    } else {
+                        seatTableElement.innerHTML = "<tr><td colspan='10'>No seats available.</td></tr>";
+                    }
+                })
+                .catch(error => {
+                    loadingElement.style.display = 'none';
+                    seatInfoElement.innerHTML = "<p>Error loading seat data.</p>";
+                    console.error("Error fetching data: ", error);
+                });
+        }
+
+        // Render the seat table
+        function renderSeatTable(seats) {
+            let rows = [];
+            let columns = 10; // 10 columns as requested
+            let seatRows = [];
+
+            // Iterate through the seats and organize them into rows and columns
+            for (let i = 0; i < 8; i++) { // 8 rows
+                let row = [];
+                for (let j = 0; j < columns; j++) { // 10 columns
+                    const seatIndex = i * columns + j;
+                    const seat = seats[seatIndex];
+
+                    if (seat) {
+                        const seatClass = seat.is_available ? 'available' : 'unavailable';
+                        row.push(`
+                            <td>
+                                <div class="seat ${seatClass}" data-seat-id="${seat.seat_id}" data-seat-price="${seat.price}" data-seat-order-number="${seat.seat_order_number}">
+                                    <div class="seat-details">
+                                        ${seat.seat_order_number}<br>
+                                        ${seat.price}֏
+                                    </div>
+                                </div>
+                            </td>
+                        `);
+                    } else {
+                        row.push("<td><div class='seat unavailable'></div></td>");
+                    }
+                }
+                seatRows.push(`<tr>${row.join('')}</tr>`);
+            }
+
+            seatTableElement.innerHTML = seatRows.join('');
+            addSeatClickListener();
+        }
+
+        // Add click event to each seat
+        function addSeatClickListener() {
+            const seats = document.querySelectorAll('.seat.available');
+            seats.forEach(seat => {
+                seat.addEventListener('click', function () {
+                    if (selectedSeat) {
+                        selectedSeat.classList.remove('selected'); // Deselect previously selected seat
+                    }
+                    this.classList.add('selected'); // Select the new seat
+                    selectedSeat = this;
+                    updateSeatInfo();
+                });
+            });
+        }
+
+        // Update the selected seat info
+        function updateSeatInfo() {
+            if (selectedSeat) {
+                const seatId = selectedSeat.getAttribute('data-seat-order-number');
+                const seatPrice = selectedSeat.getAttribute('data-seat-price');
+                seatInfoElement.innerHTML = `
+                    <p>Selected Seat:${seatId}</p>
+                    <p>Price: $${seatPrice}</p>
+                `;
+            }
+        }
+
+        // Fetch seat data on page load
+        fetchSeatData();
+    </script>
+</body>
+
+</html>
