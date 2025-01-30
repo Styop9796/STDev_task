@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seat Reservation</title>
     <style>
-        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -27,7 +26,7 @@
 
         .container {
             background-color: white;
-            width: 100%; /* Full-width container */
+            width: 100%; 
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -36,10 +35,9 @@
         h1 {
             text-align: center;
             margin-bottom: 20px;
-            color: #2c3e50;
+            color: #000000;
         }
 
-        /* Loading Spinner */
         .loading {
             text-align: center;
             font-size: 18px;
@@ -47,7 +45,6 @@
             font-weight: bold;
         }
 
-        /* Table Layout */
         .seat-table {
             width: 100%;
             table-layout: fixed;
@@ -75,7 +72,6 @@
             border: 1px solid #ccc;
             cursor: pointer;
             transition: background-color 0.3s ease;
-
         }
 
         .seat.available {
@@ -98,6 +94,70 @@
             background-color: #f39c12;
         }
 
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .modal-header {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .modal input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modal button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .modal button:hover {
+            background-color: #2980b9;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         .seat-info {
             margin-top: 20px;
             text-align: center;
@@ -105,24 +165,8 @@
 
         .seat-details {
             padding: 10px;
-            width: 100%;
             font-size: 12px;
             color: #000000;
-        }
-
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-            }
-
-            h1 {
-                font-size: 24px;
-            }
-
-            .seat-table th,
-            .seat-table td {
-                padding: 5px;
-            }
         }
     </style>
 </head>
@@ -135,21 +179,47 @@
         <div id="seat-info" class="seat-info"></div>
     </div>
 
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <div class="modal-header">Booking Details</div>
+            <form id="booking-form">
+                {% csrf_token %}
+                <input type="text" id="customer-name" placeholder="Your Name" required>
+                <input type="email" id="customer-email" placeholder="Your Email" required>
+                <input type="tel" id="customer-phone" placeholder="Your Phone Number" required>
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
     <script>
-        const apiUrl = `http://127.0.0.1:8000/api/get_seats/?show_id=1`; // Use appropriate show_id
+      
+
+
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+        const show_id = new URLSearchParams(window.location.search).get('show_id');
+
+        const apiUrl = `http://127.0.0.1:8000/api/get_seats/?show_id=${show_id}`;
         const loadingElement = document.getElementById('loading');
         const seatTableElement = document.getElementById('seat-table');
         const seatInfoElement = document.getElementById('seat-info');
-        let selectedSeat = null; // Track selected seat
+        const bookingModal = document.getElementById('booking-modal');
+        const closeModal = document.getElementById('closeModal');
+        const bookingForm = document.getElementById('booking-form');
+        const customerNameInput = document.getElementById('customer-name');
+        const customerEmailInput = document.getElementById('customer-email');
+        const customerPhoneInput = document.getElementById('customer-phone');
+        let selectedSeat = null; 
+        console.log(customerEmailInput.value)
 
-        // Function to fetch seat data and render the table
         function fetchSeatData() {
             fetch(apiUrl)
                 .then(response => response.json())
                 .then(data => {
                     loadingElement.style.display = 'none';
                     if (data.status === 200 && data.data.length > 0) {
-                        renderSeatTable(data.data);
+                        renderSeatTable(data.data, data.is_show_started);
                     } else {
                         seatTableElement.innerHTML = "<tr><td colspan='10'>No seats available.</td></tr>";
                     }
@@ -161,71 +231,124 @@
                 });
         }
 
-        // Render the seat table
-        function renderSeatTable(seats) {
-            let rows = [];
-            let columns = 10; // 10 columns as requested
-            let seatRows = [];
+        function renderSeatTable(seats, isShowStarted) {
+    let rows = [];
+    let columns = 10; 
+    let seatRows = [];
 
-            // Iterate through the seats and organize them into rows and columns
-            for (let i = 0; i < 8; i++) { // 8 rows
-                let row = [];
-                for (let j = 0; j < columns; j++) { // 10 columns
-                    const seatIndex = i * columns + j;
-                    const seat = seats[seatIndex];
+    // Check if the show has started, and if so, make all seats unavailable (red)
+    const seatClassModifier = isShowStarted ? 'unavailable' : ''; 
 
-                    if (seat) {
-                        const seatClass = seat.is_available ? 'available' : 'unavailable';
-                        row.push(`
-                            <td>
-                                <div class="seat ${seatClass}" data-seat-id="${seat.seat_id}" data-seat-price="${seat.price}" data-seat-order-number="${seat.seat_order_number}">
-                                    <div class="seat-details">
-                                        ${seat.seat_order_number}<br>
-                                        ${seat.price}֏
-                                    </div>
-                                </div>
-                            </td>
-                        `);
-                    } else {
-                        row.push("<td><div class='seat unavailable'></div></td>");
-                    }
-                }
-                seatRows.push(`<tr>${row.join('')}</tr>`);
+    for (let i = 0; i < 8; i++) { 
+        let row = [];
+        for (let j = 0; j < columns; j++) { 
+            const seatIndex = i * columns + j;
+            const seat = seats[seatIndex];
+
+            if (seat) {
+                const seatClass = isShowStarted ? 'unavailable' : (seat.is_available ? 'available' : 'unavailable');
+                row.push(`
+                    <td>
+                        <div class="seat ${seatClass}" data-seat-id="${seat.seat_id}" data-seat-price="${seat.price}" data-seat-order-number="${seat.seat_order_number}" >
+                            <div class="seat-details">
+                                ${seat.seat_order_number}<br>
+                                ${seat.price}֏
+                            </div>
+                        </div>
+                    </td>
+                `);
+            } else {
+                row.push("<td><div class='seat unavailable'></div></td>");
             }
-
-            seatTableElement.innerHTML = seatRows.join('');
-            addSeatClickListener();
         }
+        seatRows.push(`<tr>${row.join('')}</tr>`);
+    }
 
-        // Add click event to each seat
+    seatTableElement.innerHTML = seatRows.join('');
+    addSeatClickListener();
+}
+
         function addSeatClickListener() {
             const seats = document.querySelectorAll('.seat.available');
             seats.forEach(seat => {
                 seat.addEventListener('click', function () {
                     if (selectedSeat) {
-                        selectedSeat.classList.remove('selected'); // Deselect previously selected seat
+                        selectedSeat.classList.remove('selected'); 
                     }
-                    this.classList.add('selected'); // Select the new seat
+                    this.classList.add('selected'); 
                     selectedSeat = this;
                     updateSeatInfo();
+                    openBookingModal(); 
                 });
             });
         }
 
-        // Update the selected seat info
         function updateSeatInfo() {
             if (selectedSeat) {
-                const seatId = selectedSeat.getAttribute('data-seat-order-number');
+                const seatId = selectedSeat.getAttribute('data-seat-id');
                 const seatPrice = selectedSeat.getAttribute('data-seat-price');
                 seatInfoElement.innerHTML = `
-                    <p>Selected Seat:${seatId}</p>
-                    <p>Price: $${seatPrice}</p>
+                    <p>Selected Seat: ID ${seatId}</p>
+                    <p>Price: ${seatPrice}֏</p>
                 `;
             }
         }
 
-        // Fetch seat data on page load
+        function openBookingModal() {
+            const seatPrice = selectedSeat.getAttribute('data-seat-price');
+            document.querySelector('.modal-header').innerText = `Book Seat for ${seatPrice}֏`;
+            bookingModal.style.display = 'flex';
+        }
+
+        closeModal.addEventListener('click', () => {
+            bookingModal.style.display = 'none';
+        });
+
+        bookingForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const customerName = customerNameInput.value;
+            const customerEmail = customerEmailInput.value;
+            const customerPhone = customerPhoneInput.value;
+
+            const bookingData = {
+                seat_id: selectedSeat.getAttribute('data-seat-id'),
+                name: customerName,
+                email: customerEmail,
+                phone: customerPhone,
+                show_id: show_id
+            };
+
+            fetch('http://127.0.0.1:8000/api/create_reservation/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrfToken
+                },
+                body: JSON.stringify(bookingData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                
+                    bookingForm.innerHTML = `<h1>${data.message}</h1>`;
+                    setTimeout(() => {
+                        location.reload(); 
+                    }, 1500);
+
+            })
+            .catch(error => {
+                console.error('Error booking seat:', error);
+                alert('An error occurred. Please try again.');
+                bookingModal.style.display = 'none'; 
+            });
+        });
+
         fetchSeatData();
+        
+        window.addEventListener('click', function (event) {
+    if (event.target === bookingModal) {
+        bookingModal.style.display = 'none';
+    }
+});
     </script>
 </body>
 

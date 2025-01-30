@@ -253,7 +253,6 @@ class Show(models.Model):
         # Get all seats for the hall where the show is happening
         all_seats = Seat.objects.filter(hall=self.hall_id)
 
-        # Check if the seat is booked by querying the Booking model
         available_seats = []
         for seat in all_seats:
             seat_dictionary = seat.to_dict()
