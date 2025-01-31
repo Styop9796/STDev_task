@@ -30,6 +30,13 @@ cd cinema/
 ```sh
 
 python manage.py makemigrations
+```
+You sould seethis output
+
+![image](https://github.com/user-attachments/assets/642544af-d0f1-4904-8917-4c3e21196f35)
+
+
+```sh
 python manage.py migrate
 ```
 
