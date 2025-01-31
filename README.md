@@ -22,6 +22,9 @@ Note: Please have your PostgreSQL database ready with database name and credenti
 
 Copy .env.example file as .env and fill with credentials.
 
+```sh
+cd cinema/
+```
 
 ### **Database Migrations**
 ```sh
