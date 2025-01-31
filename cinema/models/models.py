@@ -115,8 +115,7 @@ class Seat(models.Model):
     seat_type =  models.CharField(max_length=10,choices=SEAT_TYPE_CHOICES,default=STANDARD)
     seat_order = models.IntegerField(help_text="The order of seats within the hall, min 1st row 1st seat , max last row last seat")
 
-    class Meta:
-        unique_together = ('hall', 'row_number', 'seat_number')
+    
 
     def clean(self):
 
