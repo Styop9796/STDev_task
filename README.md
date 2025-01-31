@@ -46,7 +46,7 @@ python manage.py migrate
 I have prepared database to make it easy for you to test
 
 ```sh
-python manage.py loaddata backup.sql
+python manage.py loaddata backup.json
 ```
 ![image](https://github.com/user-attachments/assets/f67210c8-29a7-4c5d-a57a-985a0280e96c)
 
