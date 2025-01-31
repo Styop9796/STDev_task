@@ -71,42 +71,6 @@
 },
 {
     "model": "models.hall",
-    "pk": 5,
-    "fields": {
-        "cinema": 1,
-        "name": "Test",
-        "seat_rows": 2,
-        "seats_per_row": 5,
-        "created_at": "2025-01-31T11:54:58.038",
-        "updated_at": "2025-01-31T11:54:58.038"
-    }
-},
-{
-    "model": "models.hall",
-    "pk": 6,
-    "fields": {
-        "cinema": 1,
-        "name": "tessst",
-        "seat_rows": 2,
-        "seats_per_row": 10,
-        "created_at": "2025-01-31T11:56:41.010",
-        "updated_at": "2025-01-31T11:56:41.010"
-    }
-},
-{
-    "model": "models.hall",
-    "pk": 8,
-    "fields": {
-        "cinema": 1,
-        "name": "Styop",
-        "seat_rows": 1,
-        "seats_per_row": 10,
-        "created_at": "2025-01-31T11:58:35.977",
-        "updated_at": "2025-01-31T11:58:35.977"
-    }
-},
-{
-    "model": "models.hall",
     "pk": 9,
     "fields": {
         "cinema": 1,
@@ -127,6 +91,18 @@
         "seats_per_row": 10,
         "created_at": "2025-01-31T12:06:05.008",
         "updated_at": "2025-01-31T12:06:05.008"
+    }
+},
+{
+    "model": "models.hall",
+    "pk": 11,
+    "fields": {
+        "cinema": 1,
+        "name": "Gray",
+        "seat_rows": 5,
+        "seats_per_row": 10,
+        "created_at": "2025-01-31T12:50:30.654",
+        "updated_at": "2025-01-31T12:50:30.654"
     }
 },
 {
@@ -1891,116 +1867,6 @@
 },
 {
     "model": "models.seat",
-    "pk": 164,
-    "fields": {
-        "hall": 8,
-        "row_number": 1,
-        "seat_number": 1,
-        "seat_type": "standard",
-        "seat_order": 1
-    }
-},
-{
-    "model": "models.seat",
-    "pk": 165,
-    "fields": {
-        "hall": 8,
-        "row_number": 1,
-        "seat_number": 2,
-        "seat_type": "standard",
-        "seat_order": 2
-    }
-},
-{
-    "model": "models.seat",
-    "pk": 166,
-    "fields": {
-        "hall": 8,
-        "row_number": 1,
-        "seat_number": 3,
-        "seat_type": "standard",
-        "seat_order": 3
-    }
-},
-{
-    "model": "models.seat",
-    "pk": 167,
-    "fields": {
-        "hall": 8,
-        "row_number": 1,
-        "seat_number": 4,
-        "seat_type": "standard",
-        "seat_order": 4
-    }
-},
-{
-    "model": "models.seat",
-    "pk": 168,
-    "fields": {
-        "hall": 8,
-        "row_number": 1,
-        "seat_number": 5,
-        "seat_type": "standard",
-        "seat_order": 5
-    }
-},
-{
-    "model": "models.seat",
-    "pk": 169,
-    "fields": {
-        "hall": 8,
-        "row_number": 1,
-        "seat_number": 6,
-        "seat_type": "standard",
-        "seat_order": 6
-    }
-},
-{
-    "model": "models.seat",
-    "pk": 170,
-    "fields": {
-        "hall": 8,
-        "row_number": 1,
-        "seat_number": 7,
-        "seat_type": "standard",
-        "seat_order": 7
-    }
-},
-{
-    "model": "models.seat",
-    "pk": 171,
-    "fields": {
-        "hall": 8,
-        "row_number": 1,
-        "seat_number": 8,
-        "seat_type": "standard",
-        "seat_order": 8
-    }
-},
-{
-    "model": "models.seat",
-    "pk": 172,
-    "fields": {
-        "hall": 8,
-        "row_number": 1,
-        "seat_number": 9,
-        "seat_type": "standard",
-        "seat_order": 9
-    }
-},
-{
-    "model": "models.seat",
-    "pk": 173,
-    "fields": {
-        "hall": 8,
-        "row_number": 1,
-        "seat_number": 10,
-        "seat_type": "standard",
-        "seat_order": 10
-    }
-},
-{
-    "model": "models.seat",
     "pk": 174,
     "fields": {
         "hall": 9,
@@ -3650,6 +3516,3856 @@
     }
 },
 {
+    "model": "models.seat",
+    "pk": 1701,
+    "fields": {
+        "hall": 1,
+        "row_number": 1,
+        "seat_number": 1,
+        "seat_type": "vip",
+        "seat_order": 1
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1702,
+    "fields": {
+        "hall": 1,
+        "row_number": 1,
+        "seat_number": 2,
+        "seat_type": "vip",
+        "seat_order": 2
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1703,
+    "fields": {
+        "hall": 1,
+        "row_number": 1,
+        "seat_number": 3,
+        "seat_type": "vip",
+        "seat_order": 3
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1704,
+    "fields": {
+        "hall": 1,
+        "row_number": 1,
+        "seat_number": 4,
+        "seat_type": "vip",
+        "seat_order": 4
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1705,
+    "fields": {
+        "hall": 1,
+        "row_number": 1,
+        "seat_number": 5,
+        "seat_type": "vip",
+        "seat_order": 5
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1706,
+    "fields": {
+        "hall": 1,
+        "row_number": 1,
+        "seat_number": 6,
+        "seat_type": "vip",
+        "seat_order": 6
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1707,
+    "fields": {
+        "hall": 1,
+        "row_number": 1,
+        "seat_number": 7,
+        "seat_type": "vip",
+        "seat_order": 7
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1708,
+    "fields": {
+        "hall": 1,
+        "row_number": 1,
+        "seat_number": 8,
+        "seat_type": "vip",
+        "seat_order": 8
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1709,
+    "fields": {
+        "hall": 1,
+        "row_number": 1,
+        "seat_number": 9,
+        "seat_type": "vip",
+        "seat_order": 9
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1710,
+    "fields": {
+        "hall": 1,
+        "row_number": 1,
+        "seat_number": 10,
+        "seat_type": "vip",
+        "seat_order": 10
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1711,
+    "fields": {
+        "hall": 1,
+        "row_number": 2,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 11
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1712,
+    "fields": {
+        "hall": 1,
+        "row_number": 2,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 12
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1713,
+    "fields": {
+        "hall": 1,
+        "row_number": 2,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 13
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1714,
+    "fields": {
+        "hall": 1,
+        "row_number": 2,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 14
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1715,
+    "fields": {
+        "hall": 1,
+        "row_number": 2,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 15
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1716,
+    "fields": {
+        "hall": 1,
+        "row_number": 2,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 16
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1717,
+    "fields": {
+        "hall": 1,
+        "row_number": 2,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 17
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1718,
+    "fields": {
+        "hall": 1,
+        "row_number": 2,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 18
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1719,
+    "fields": {
+        "hall": 1,
+        "row_number": 2,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 19
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1720,
+    "fields": {
+        "hall": 1,
+        "row_number": 2,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 20
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1721,
+    "fields": {
+        "hall": 1,
+        "row_number": 3,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 21
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1722,
+    "fields": {
+        "hall": 1,
+        "row_number": 3,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 22
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1723,
+    "fields": {
+        "hall": 1,
+        "row_number": 3,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 23
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1724,
+    "fields": {
+        "hall": 1,
+        "row_number": 3,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 24
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1725,
+    "fields": {
+        "hall": 1,
+        "row_number": 3,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 25
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1726,
+    "fields": {
+        "hall": 1,
+        "row_number": 3,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 26
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1727,
+    "fields": {
+        "hall": 1,
+        "row_number": 3,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 27
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1728,
+    "fields": {
+        "hall": 1,
+        "row_number": 3,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 28
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1729,
+    "fields": {
+        "hall": 1,
+        "row_number": 3,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 29
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1730,
+    "fields": {
+        "hall": 1,
+        "row_number": 3,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 30
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1731,
+    "fields": {
+        "hall": 1,
+        "row_number": 4,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 31
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1732,
+    "fields": {
+        "hall": 1,
+        "row_number": 4,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 32
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1733,
+    "fields": {
+        "hall": 1,
+        "row_number": 4,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 33
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1734,
+    "fields": {
+        "hall": 1,
+        "row_number": 4,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 34
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1735,
+    "fields": {
+        "hall": 1,
+        "row_number": 4,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 35
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1736,
+    "fields": {
+        "hall": 1,
+        "row_number": 4,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 36
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1737,
+    "fields": {
+        "hall": 1,
+        "row_number": 4,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 37
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1738,
+    "fields": {
+        "hall": 1,
+        "row_number": 4,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 38
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1739,
+    "fields": {
+        "hall": 1,
+        "row_number": 4,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 39
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1740,
+    "fields": {
+        "hall": 1,
+        "row_number": 4,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 40
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1741,
+    "fields": {
+        "hall": 1,
+        "row_number": 5,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 41
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1742,
+    "fields": {
+        "hall": 1,
+        "row_number": 5,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 42
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1743,
+    "fields": {
+        "hall": 1,
+        "row_number": 5,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 43
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1744,
+    "fields": {
+        "hall": 1,
+        "row_number": 5,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 44
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1745,
+    "fields": {
+        "hall": 1,
+        "row_number": 5,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 45
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1746,
+    "fields": {
+        "hall": 1,
+        "row_number": 5,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 46
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1747,
+    "fields": {
+        "hall": 1,
+        "row_number": 5,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 47
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1748,
+    "fields": {
+        "hall": 1,
+        "row_number": 5,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 48
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1749,
+    "fields": {
+        "hall": 1,
+        "row_number": 5,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 49
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1750,
+    "fields": {
+        "hall": 1,
+        "row_number": 5,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 50
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1751,
+    "fields": {
+        "hall": 1,
+        "row_number": 6,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 51
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1752,
+    "fields": {
+        "hall": 1,
+        "row_number": 6,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 52
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1753,
+    "fields": {
+        "hall": 1,
+        "row_number": 6,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 53
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1754,
+    "fields": {
+        "hall": 1,
+        "row_number": 6,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 54
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1755,
+    "fields": {
+        "hall": 1,
+        "row_number": 6,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 55
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1756,
+    "fields": {
+        "hall": 1,
+        "row_number": 6,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 56
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1757,
+    "fields": {
+        "hall": 1,
+        "row_number": 6,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 57
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1758,
+    "fields": {
+        "hall": 1,
+        "row_number": 6,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 58
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1759,
+    "fields": {
+        "hall": 1,
+        "row_number": 6,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 59
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1760,
+    "fields": {
+        "hall": 1,
+        "row_number": 6,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 60
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1761,
+    "fields": {
+        "hall": 1,
+        "row_number": 7,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 61
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1762,
+    "fields": {
+        "hall": 1,
+        "row_number": 7,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 62
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1763,
+    "fields": {
+        "hall": 1,
+        "row_number": 7,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 63
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1764,
+    "fields": {
+        "hall": 1,
+        "row_number": 7,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 64
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1765,
+    "fields": {
+        "hall": 1,
+        "row_number": 7,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 65
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1766,
+    "fields": {
+        "hall": 1,
+        "row_number": 7,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 66
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1767,
+    "fields": {
+        "hall": 1,
+        "row_number": 7,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 67
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1768,
+    "fields": {
+        "hall": 1,
+        "row_number": 7,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 68
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1769,
+    "fields": {
+        "hall": 1,
+        "row_number": 7,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 69
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1770,
+    "fields": {
+        "hall": 1,
+        "row_number": 7,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 70
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1771,
+    "fields": {
+        "hall": 1,
+        "row_number": 8,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 71
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1772,
+    "fields": {
+        "hall": 1,
+        "row_number": 8,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 72
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1773,
+    "fields": {
+        "hall": 1,
+        "row_number": 8,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 73
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1774,
+    "fields": {
+        "hall": 1,
+        "row_number": 8,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 74
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1775,
+    "fields": {
+        "hall": 1,
+        "row_number": 8,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 75
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1776,
+    "fields": {
+        "hall": 1,
+        "row_number": 8,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 76
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1777,
+    "fields": {
+        "hall": 1,
+        "row_number": 8,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 77
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1778,
+    "fields": {
+        "hall": 1,
+        "row_number": 8,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 78
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1779,
+    "fields": {
+        "hall": 1,
+        "row_number": 8,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 79
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1780,
+    "fields": {
+        "hall": 1,
+        "row_number": 8,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 80
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1781,
+    "fields": {
+        "hall": 2,
+        "row_number": 1,
+        "seat_number": 1,
+        "seat_type": "vip",
+        "seat_order": 1
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1782,
+    "fields": {
+        "hall": 2,
+        "row_number": 1,
+        "seat_number": 2,
+        "seat_type": "vip",
+        "seat_order": 2
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1783,
+    "fields": {
+        "hall": 2,
+        "row_number": 1,
+        "seat_number": 3,
+        "seat_type": "vip",
+        "seat_order": 3
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1784,
+    "fields": {
+        "hall": 2,
+        "row_number": 1,
+        "seat_number": 4,
+        "seat_type": "vip",
+        "seat_order": 4
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1785,
+    "fields": {
+        "hall": 2,
+        "row_number": 1,
+        "seat_number": 5,
+        "seat_type": "vip",
+        "seat_order": 5
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1786,
+    "fields": {
+        "hall": 2,
+        "row_number": 1,
+        "seat_number": 6,
+        "seat_type": "vip",
+        "seat_order": 6
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1787,
+    "fields": {
+        "hall": 2,
+        "row_number": 1,
+        "seat_number": 7,
+        "seat_type": "vip",
+        "seat_order": 7
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1788,
+    "fields": {
+        "hall": 2,
+        "row_number": 1,
+        "seat_number": 8,
+        "seat_type": "vip",
+        "seat_order": 8
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1789,
+    "fields": {
+        "hall": 2,
+        "row_number": 2,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 9
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1790,
+    "fields": {
+        "hall": 2,
+        "row_number": 2,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 10
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1791,
+    "fields": {
+        "hall": 2,
+        "row_number": 2,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 11
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1792,
+    "fields": {
+        "hall": 2,
+        "row_number": 2,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 12
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1793,
+    "fields": {
+        "hall": 2,
+        "row_number": 2,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 13
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1794,
+    "fields": {
+        "hall": 2,
+        "row_number": 2,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 14
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1795,
+    "fields": {
+        "hall": 2,
+        "row_number": 2,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 15
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1796,
+    "fields": {
+        "hall": 2,
+        "row_number": 2,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 16
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1797,
+    "fields": {
+        "hall": 2,
+        "row_number": 3,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 17
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1798,
+    "fields": {
+        "hall": 2,
+        "row_number": 3,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 18
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1799,
+    "fields": {
+        "hall": 2,
+        "row_number": 3,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 19
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1800,
+    "fields": {
+        "hall": 2,
+        "row_number": 3,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 20
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1801,
+    "fields": {
+        "hall": 2,
+        "row_number": 3,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 21
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1802,
+    "fields": {
+        "hall": 2,
+        "row_number": 3,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 22
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1803,
+    "fields": {
+        "hall": 2,
+        "row_number": 3,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 23
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1804,
+    "fields": {
+        "hall": 2,
+        "row_number": 3,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 24
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1805,
+    "fields": {
+        "hall": 2,
+        "row_number": 4,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 25
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1806,
+    "fields": {
+        "hall": 2,
+        "row_number": 4,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 26
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1807,
+    "fields": {
+        "hall": 2,
+        "row_number": 4,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 27
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1808,
+    "fields": {
+        "hall": 2,
+        "row_number": 4,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 28
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1809,
+    "fields": {
+        "hall": 2,
+        "row_number": 4,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 29
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1810,
+    "fields": {
+        "hall": 2,
+        "row_number": 4,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 30
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1811,
+    "fields": {
+        "hall": 2,
+        "row_number": 4,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 31
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1812,
+    "fields": {
+        "hall": 2,
+        "row_number": 4,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 32
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1813,
+    "fields": {
+        "hall": 2,
+        "row_number": 5,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 33
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1814,
+    "fields": {
+        "hall": 2,
+        "row_number": 5,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 34
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1815,
+    "fields": {
+        "hall": 2,
+        "row_number": 5,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 35
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1816,
+    "fields": {
+        "hall": 2,
+        "row_number": 5,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 36
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1817,
+    "fields": {
+        "hall": 2,
+        "row_number": 5,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 37
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1818,
+    "fields": {
+        "hall": 2,
+        "row_number": 5,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 38
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1819,
+    "fields": {
+        "hall": 2,
+        "row_number": 5,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 39
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1820,
+    "fields": {
+        "hall": 2,
+        "row_number": 5,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 40
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1821,
+    "fields": {
+        "hall": 3,
+        "row_number": 1,
+        "seat_number": 1,
+        "seat_type": "vip",
+        "seat_order": 1
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1822,
+    "fields": {
+        "hall": 3,
+        "row_number": 1,
+        "seat_number": 2,
+        "seat_type": "vip",
+        "seat_order": 2
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1823,
+    "fields": {
+        "hall": 3,
+        "row_number": 1,
+        "seat_number": 3,
+        "seat_type": "vip",
+        "seat_order": 3
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1824,
+    "fields": {
+        "hall": 3,
+        "row_number": 1,
+        "seat_number": 4,
+        "seat_type": "vip",
+        "seat_order": 4
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1825,
+    "fields": {
+        "hall": 3,
+        "row_number": 1,
+        "seat_number": 5,
+        "seat_type": "vip",
+        "seat_order": 5
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1826,
+    "fields": {
+        "hall": 3,
+        "row_number": 1,
+        "seat_number": 6,
+        "seat_type": "vip",
+        "seat_order": 6
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1827,
+    "fields": {
+        "hall": 3,
+        "row_number": 2,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 7
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1828,
+    "fields": {
+        "hall": 3,
+        "row_number": 2,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 8
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1829,
+    "fields": {
+        "hall": 3,
+        "row_number": 2,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 9
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1830,
+    "fields": {
+        "hall": 3,
+        "row_number": 2,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 10
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1831,
+    "fields": {
+        "hall": 3,
+        "row_number": 2,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 11
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1832,
+    "fields": {
+        "hall": 3,
+        "row_number": 2,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 12
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1833,
+    "fields": {
+        "hall": 3,
+        "row_number": 3,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 13
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1834,
+    "fields": {
+        "hall": 3,
+        "row_number": 3,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 14
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1835,
+    "fields": {
+        "hall": 3,
+        "row_number": 3,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 15
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1836,
+    "fields": {
+        "hall": 3,
+        "row_number": 3,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 16
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1837,
+    "fields": {
+        "hall": 3,
+        "row_number": 3,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 17
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1838,
+    "fields": {
+        "hall": 3,
+        "row_number": 3,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 18
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1839,
+    "fields": {
+        "hall": 3,
+        "row_number": 4,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 19
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1840,
+    "fields": {
+        "hall": 3,
+        "row_number": 4,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 20
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1841,
+    "fields": {
+        "hall": 3,
+        "row_number": 4,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 21
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1842,
+    "fields": {
+        "hall": 3,
+        "row_number": 4,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 22
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1843,
+    "fields": {
+        "hall": 3,
+        "row_number": 4,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 23
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1844,
+    "fields": {
+        "hall": 3,
+        "row_number": 4,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 24
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1845,
+    "fields": {
+        "hall": 3,
+        "row_number": 5,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 25
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1846,
+    "fields": {
+        "hall": 3,
+        "row_number": 5,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 26
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1847,
+    "fields": {
+        "hall": 3,
+        "row_number": 5,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 27
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1848,
+    "fields": {
+        "hall": 3,
+        "row_number": 5,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 28
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1849,
+    "fields": {
+        "hall": 3,
+        "row_number": 5,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 29
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1850,
+    "fields": {
+        "hall": 3,
+        "row_number": 5,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 30
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1891,
+    "fields": {
+        "hall": 9,
+        "row_number": 1,
+        "seat_number": 1,
+        "seat_type": "vip",
+        "seat_order": 1
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1892,
+    "fields": {
+        "hall": 9,
+        "row_number": 1,
+        "seat_number": 2,
+        "seat_type": "vip",
+        "seat_order": 2
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1893,
+    "fields": {
+        "hall": 9,
+        "row_number": 1,
+        "seat_number": 3,
+        "seat_type": "vip",
+        "seat_order": 3
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1894,
+    "fields": {
+        "hall": 9,
+        "row_number": 1,
+        "seat_number": 4,
+        "seat_type": "vip",
+        "seat_order": 4
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1895,
+    "fields": {
+        "hall": 9,
+        "row_number": 1,
+        "seat_number": 5,
+        "seat_type": "vip",
+        "seat_order": 5
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1896,
+    "fields": {
+        "hall": 9,
+        "row_number": 1,
+        "seat_number": 6,
+        "seat_type": "vip",
+        "seat_order": 6
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1897,
+    "fields": {
+        "hall": 9,
+        "row_number": 1,
+        "seat_number": 7,
+        "seat_type": "vip",
+        "seat_order": 7
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1898,
+    "fields": {
+        "hall": 9,
+        "row_number": 1,
+        "seat_number": 8,
+        "seat_type": "vip",
+        "seat_order": 8
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1899,
+    "fields": {
+        "hall": 9,
+        "row_number": 1,
+        "seat_number": 9,
+        "seat_type": "vip",
+        "seat_order": 9
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1900,
+    "fields": {
+        "hall": 9,
+        "row_number": 1,
+        "seat_number": 10,
+        "seat_type": "vip",
+        "seat_order": 10
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1901,
+    "fields": {
+        "hall": 9,
+        "row_number": 2,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 11
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1902,
+    "fields": {
+        "hall": 9,
+        "row_number": 2,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 12
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1903,
+    "fields": {
+        "hall": 9,
+        "row_number": 2,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 13
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1904,
+    "fields": {
+        "hall": 9,
+        "row_number": 2,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 14
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1905,
+    "fields": {
+        "hall": 9,
+        "row_number": 2,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 15
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1906,
+    "fields": {
+        "hall": 9,
+        "row_number": 2,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 16
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1907,
+    "fields": {
+        "hall": 9,
+        "row_number": 2,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 17
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1908,
+    "fields": {
+        "hall": 9,
+        "row_number": 2,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 18
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1909,
+    "fields": {
+        "hall": 9,
+        "row_number": 2,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 19
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1910,
+    "fields": {
+        "hall": 9,
+        "row_number": 2,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 20
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1911,
+    "fields": {
+        "hall": 9,
+        "row_number": 3,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 21
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1912,
+    "fields": {
+        "hall": 9,
+        "row_number": 3,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 22
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1913,
+    "fields": {
+        "hall": 9,
+        "row_number": 3,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 23
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1914,
+    "fields": {
+        "hall": 9,
+        "row_number": 3,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 24
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1915,
+    "fields": {
+        "hall": 9,
+        "row_number": 3,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 25
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1916,
+    "fields": {
+        "hall": 9,
+        "row_number": 3,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 26
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1917,
+    "fields": {
+        "hall": 9,
+        "row_number": 3,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 27
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1918,
+    "fields": {
+        "hall": 9,
+        "row_number": 3,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 28
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1919,
+    "fields": {
+        "hall": 9,
+        "row_number": 3,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 29
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1920,
+    "fields": {
+        "hall": 9,
+        "row_number": 3,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 30
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1921,
+    "fields": {
+        "hall": 9,
+        "row_number": 4,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 31
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1922,
+    "fields": {
+        "hall": 9,
+        "row_number": 4,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 32
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1923,
+    "fields": {
+        "hall": 9,
+        "row_number": 4,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 33
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1924,
+    "fields": {
+        "hall": 9,
+        "row_number": 4,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 34
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1925,
+    "fields": {
+        "hall": 9,
+        "row_number": 4,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 35
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1926,
+    "fields": {
+        "hall": 9,
+        "row_number": 4,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 36
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1927,
+    "fields": {
+        "hall": 9,
+        "row_number": 4,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 37
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1928,
+    "fields": {
+        "hall": 9,
+        "row_number": 4,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 38
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1929,
+    "fields": {
+        "hall": 9,
+        "row_number": 4,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 39
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1930,
+    "fields": {
+        "hall": 9,
+        "row_number": 4,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 40
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1931,
+    "fields": {
+        "hall": 9,
+        "row_number": 5,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 41
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1932,
+    "fields": {
+        "hall": 9,
+        "row_number": 5,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 42
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1933,
+    "fields": {
+        "hall": 9,
+        "row_number": 5,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 43
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1934,
+    "fields": {
+        "hall": 9,
+        "row_number": 5,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 44
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1935,
+    "fields": {
+        "hall": 9,
+        "row_number": 5,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 45
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1936,
+    "fields": {
+        "hall": 9,
+        "row_number": 5,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 46
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1937,
+    "fields": {
+        "hall": 9,
+        "row_number": 5,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 47
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1938,
+    "fields": {
+        "hall": 9,
+        "row_number": 5,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 48
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1939,
+    "fields": {
+        "hall": 9,
+        "row_number": 5,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 49
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1940,
+    "fields": {
+        "hall": 9,
+        "row_number": 5,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 50
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1941,
+    "fields": {
+        "hall": 9,
+        "row_number": 6,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 51
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1942,
+    "fields": {
+        "hall": 9,
+        "row_number": 6,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 52
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1943,
+    "fields": {
+        "hall": 9,
+        "row_number": 6,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 53
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1944,
+    "fields": {
+        "hall": 9,
+        "row_number": 6,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 54
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1945,
+    "fields": {
+        "hall": 9,
+        "row_number": 6,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 55
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1946,
+    "fields": {
+        "hall": 9,
+        "row_number": 6,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 56
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1947,
+    "fields": {
+        "hall": 9,
+        "row_number": 6,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 57
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1948,
+    "fields": {
+        "hall": 9,
+        "row_number": 6,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 58
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1949,
+    "fields": {
+        "hall": 9,
+        "row_number": 6,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 59
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1950,
+    "fields": {
+        "hall": 9,
+        "row_number": 6,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 60
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1951,
+    "fields": {
+        "hall": 9,
+        "row_number": 7,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 61
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1952,
+    "fields": {
+        "hall": 9,
+        "row_number": 7,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 62
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1953,
+    "fields": {
+        "hall": 9,
+        "row_number": 7,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 63
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1954,
+    "fields": {
+        "hall": 9,
+        "row_number": 7,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 64
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1955,
+    "fields": {
+        "hall": 9,
+        "row_number": 7,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 65
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1956,
+    "fields": {
+        "hall": 9,
+        "row_number": 7,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 66
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1957,
+    "fields": {
+        "hall": 9,
+        "row_number": 7,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 67
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1958,
+    "fields": {
+        "hall": 9,
+        "row_number": 7,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 68
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1959,
+    "fields": {
+        "hall": 9,
+        "row_number": 7,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 69
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1960,
+    "fields": {
+        "hall": 9,
+        "row_number": 7,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 70
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1961,
+    "fields": {
+        "hall": 9,
+        "row_number": 8,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 71
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1962,
+    "fields": {
+        "hall": 9,
+        "row_number": 8,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 72
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1963,
+    "fields": {
+        "hall": 9,
+        "row_number": 8,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 73
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1964,
+    "fields": {
+        "hall": 9,
+        "row_number": 8,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 74
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1965,
+    "fields": {
+        "hall": 9,
+        "row_number": 8,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 75
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1966,
+    "fields": {
+        "hall": 9,
+        "row_number": 8,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 76
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1967,
+    "fields": {
+        "hall": 9,
+        "row_number": 8,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 77
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1968,
+    "fields": {
+        "hall": 9,
+        "row_number": 8,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 78
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1969,
+    "fields": {
+        "hall": 9,
+        "row_number": 8,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 79
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1970,
+    "fields": {
+        "hall": 9,
+        "row_number": 8,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 80
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1971,
+    "fields": {
+        "hall": 9,
+        "row_number": 9,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 81
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1972,
+    "fields": {
+        "hall": 9,
+        "row_number": 9,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 82
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1973,
+    "fields": {
+        "hall": 9,
+        "row_number": 9,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 83
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1974,
+    "fields": {
+        "hall": 9,
+        "row_number": 9,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 84
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1975,
+    "fields": {
+        "hall": 9,
+        "row_number": 9,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 85
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1976,
+    "fields": {
+        "hall": 9,
+        "row_number": 9,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 86
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1977,
+    "fields": {
+        "hall": 9,
+        "row_number": 9,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 87
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1978,
+    "fields": {
+        "hall": 9,
+        "row_number": 9,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 88
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1979,
+    "fields": {
+        "hall": 9,
+        "row_number": 9,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 89
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1980,
+    "fields": {
+        "hall": 9,
+        "row_number": 9,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 90
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1981,
+    "fields": {
+        "hall": 9,
+        "row_number": 10,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 91
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1982,
+    "fields": {
+        "hall": 9,
+        "row_number": 10,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 92
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1983,
+    "fields": {
+        "hall": 9,
+        "row_number": 10,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 93
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1984,
+    "fields": {
+        "hall": 9,
+        "row_number": 10,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 94
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1985,
+    "fields": {
+        "hall": 9,
+        "row_number": 10,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 95
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1986,
+    "fields": {
+        "hall": 9,
+        "row_number": 10,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 96
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1987,
+    "fields": {
+        "hall": 9,
+        "row_number": 10,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 97
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1988,
+    "fields": {
+        "hall": 9,
+        "row_number": 10,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 98
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1989,
+    "fields": {
+        "hall": 9,
+        "row_number": 10,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 99
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1990,
+    "fields": {
+        "hall": 9,
+        "row_number": 10,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 100
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1991,
+    "fields": {
+        "hall": 10,
+        "row_number": 1,
+        "seat_number": 1,
+        "seat_type": "vip",
+        "seat_order": 1
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1992,
+    "fields": {
+        "hall": 10,
+        "row_number": 1,
+        "seat_number": 2,
+        "seat_type": "vip",
+        "seat_order": 2
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1993,
+    "fields": {
+        "hall": 10,
+        "row_number": 1,
+        "seat_number": 3,
+        "seat_type": "vip",
+        "seat_order": 3
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1994,
+    "fields": {
+        "hall": 10,
+        "row_number": 1,
+        "seat_number": 4,
+        "seat_type": "vip",
+        "seat_order": 4
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1995,
+    "fields": {
+        "hall": 10,
+        "row_number": 1,
+        "seat_number": 5,
+        "seat_type": "vip",
+        "seat_order": 5
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1996,
+    "fields": {
+        "hall": 10,
+        "row_number": 1,
+        "seat_number": 6,
+        "seat_type": "vip",
+        "seat_order": 6
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1997,
+    "fields": {
+        "hall": 10,
+        "row_number": 1,
+        "seat_number": 7,
+        "seat_type": "vip",
+        "seat_order": 7
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1998,
+    "fields": {
+        "hall": 10,
+        "row_number": 1,
+        "seat_number": 8,
+        "seat_type": "vip",
+        "seat_order": 8
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 1999,
+    "fields": {
+        "hall": 10,
+        "row_number": 1,
+        "seat_number": 9,
+        "seat_type": "vip",
+        "seat_order": 9
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2000,
+    "fields": {
+        "hall": 10,
+        "row_number": 1,
+        "seat_number": 10,
+        "seat_type": "vip",
+        "seat_order": 10
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2001,
+    "fields": {
+        "hall": 10,
+        "row_number": 2,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 11
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2002,
+    "fields": {
+        "hall": 10,
+        "row_number": 2,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 12
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2003,
+    "fields": {
+        "hall": 10,
+        "row_number": 2,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 13
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2004,
+    "fields": {
+        "hall": 10,
+        "row_number": 2,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 14
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2005,
+    "fields": {
+        "hall": 10,
+        "row_number": 2,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 15
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2006,
+    "fields": {
+        "hall": 10,
+        "row_number": 2,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 16
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2007,
+    "fields": {
+        "hall": 10,
+        "row_number": 2,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 17
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2008,
+    "fields": {
+        "hall": 10,
+        "row_number": 2,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 18
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2009,
+    "fields": {
+        "hall": 10,
+        "row_number": 2,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 19
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2010,
+    "fields": {
+        "hall": 10,
+        "row_number": 2,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 20
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2011,
+    "fields": {
+        "hall": 10,
+        "row_number": 3,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 21
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2012,
+    "fields": {
+        "hall": 10,
+        "row_number": 3,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 22
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2013,
+    "fields": {
+        "hall": 10,
+        "row_number": 3,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 23
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2014,
+    "fields": {
+        "hall": 10,
+        "row_number": 3,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 24
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2015,
+    "fields": {
+        "hall": 10,
+        "row_number": 3,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 25
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2016,
+    "fields": {
+        "hall": 10,
+        "row_number": 3,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 26
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2017,
+    "fields": {
+        "hall": 10,
+        "row_number": 3,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 27
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2018,
+    "fields": {
+        "hall": 10,
+        "row_number": 3,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 28
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2019,
+    "fields": {
+        "hall": 10,
+        "row_number": 3,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 29
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2020,
+    "fields": {
+        "hall": 10,
+        "row_number": 3,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 30
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2021,
+    "fields": {
+        "hall": 10,
+        "row_number": 4,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 31
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2022,
+    "fields": {
+        "hall": 10,
+        "row_number": 4,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 32
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2023,
+    "fields": {
+        "hall": 10,
+        "row_number": 4,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 33
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2024,
+    "fields": {
+        "hall": 10,
+        "row_number": 4,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 34
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2025,
+    "fields": {
+        "hall": 10,
+        "row_number": 4,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 35
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2026,
+    "fields": {
+        "hall": 10,
+        "row_number": 4,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 36
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2027,
+    "fields": {
+        "hall": 10,
+        "row_number": 4,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 37
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2028,
+    "fields": {
+        "hall": 10,
+        "row_number": 4,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 38
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2029,
+    "fields": {
+        "hall": 10,
+        "row_number": 4,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 39
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2030,
+    "fields": {
+        "hall": 10,
+        "row_number": 4,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 40
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2031,
+    "fields": {
+        "hall": 10,
+        "row_number": 5,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 41
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2032,
+    "fields": {
+        "hall": 10,
+        "row_number": 5,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 42
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2033,
+    "fields": {
+        "hall": 10,
+        "row_number": 5,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 43
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2034,
+    "fields": {
+        "hall": 10,
+        "row_number": 5,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 44
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2035,
+    "fields": {
+        "hall": 10,
+        "row_number": 5,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 45
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2036,
+    "fields": {
+        "hall": 10,
+        "row_number": 5,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 46
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2037,
+    "fields": {
+        "hall": 10,
+        "row_number": 5,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 47
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2038,
+    "fields": {
+        "hall": 10,
+        "row_number": 5,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 48
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2039,
+    "fields": {
+        "hall": 10,
+        "row_number": 5,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 49
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2040,
+    "fields": {
+        "hall": 10,
+        "row_number": 5,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 50
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2041,
+    "fields": {
+        "hall": 11,
+        "row_number": 1,
+        "seat_number": 1,
+        "seat_type": "vip",
+        "seat_order": 1
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2042,
+    "fields": {
+        "hall": 11,
+        "row_number": 1,
+        "seat_number": 2,
+        "seat_type": "vip",
+        "seat_order": 2
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2043,
+    "fields": {
+        "hall": 11,
+        "row_number": 1,
+        "seat_number": 3,
+        "seat_type": "vip",
+        "seat_order": 3
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2044,
+    "fields": {
+        "hall": 11,
+        "row_number": 1,
+        "seat_number": 4,
+        "seat_type": "vip",
+        "seat_order": 4
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2045,
+    "fields": {
+        "hall": 11,
+        "row_number": 1,
+        "seat_number": 5,
+        "seat_type": "vip",
+        "seat_order": 5
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2046,
+    "fields": {
+        "hall": 11,
+        "row_number": 1,
+        "seat_number": 6,
+        "seat_type": "vip",
+        "seat_order": 6
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2047,
+    "fields": {
+        "hall": 11,
+        "row_number": 1,
+        "seat_number": 7,
+        "seat_type": "vip",
+        "seat_order": 7
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2048,
+    "fields": {
+        "hall": 11,
+        "row_number": 1,
+        "seat_number": 8,
+        "seat_type": "vip",
+        "seat_order": 8
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2049,
+    "fields": {
+        "hall": 11,
+        "row_number": 1,
+        "seat_number": 9,
+        "seat_type": "vip",
+        "seat_order": 9
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2050,
+    "fields": {
+        "hall": 11,
+        "row_number": 1,
+        "seat_number": 10,
+        "seat_type": "vip",
+        "seat_order": 10
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2051,
+    "fields": {
+        "hall": 11,
+        "row_number": 2,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 11
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2052,
+    "fields": {
+        "hall": 11,
+        "row_number": 2,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 12
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2053,
+    "fields": {
+        "hall": 11,
+        "row_number": 2,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 13
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2054,
+    "fields": {
+        "hall": 11,
+        "row_number": 2,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 14
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2055,
+    "fields": {
+        "hall": 11,
+        "row_number": 2,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 15
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2056,
+    "fields": {
+        "hall": 11,
+        "row_number": 2,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 16
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2057,
+    "fields": {
+        "hall": 11,
+        "row_number": 2,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 17
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2058,
+    "fields": {
+        "hall": 11,
+        "row_number": 2,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 18
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2059,
+    "fields": {
+        "hall": 11,
+        "row_number": 2,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 19
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2060,
+    "fields": {
+        "hall": 11,
+        "row_number": 2,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 20
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2061,
+    "fields": {
+        "hall": 11,
+        "row_number": 3,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 21
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2062,
+    "fields": {
+        "hall": 11,
+        "row_number": 3,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 22
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2063,
+    "fields": {
+        "hall": 11,
+        "row_number": 3,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 23
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2064,
+    "fields": {
+        "hall": 11,
+        "row_number": 3,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 24
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2065,
+    "fields": {
+        "hall": 11,
+        "row_number": 3,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 25
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2066,
+    "fields": {
+        "hall": 11,
+        "row_number": 3,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 26
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2067,
+    "fields": {
+        "hall": 11,
+        "row_number": 3,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 27
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2068,
+    "fields": {
+        "hall": 11,
+        "row_number": 3,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 28
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2069,
+    "fields": {
+        "hall": 11,
+        "row_number": 3,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 29
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2070,
+    "fields": {
+        "hall": 11,
+        "row_number": 3,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 30
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2071,
+    "fields": {
+        "hall": 11,
+        "row_number": 4,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 31
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2072,
+    "fields": {
+        "hall": 11,
+        "row_number": 4,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 32
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2073,
+    "fields": {
+        "hall": 11,
+        "row_number": 4,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 33
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2074,
+    "fields": {
+        "hall": 11,
+        "row_number": 4,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 34
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2075,
+    "fields": {
+        "hall": 11,
+        "row_number": 4,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 35
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2076,
+    "fields": {
+        "hall": 11,
+        "row_number": 4,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 36
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2077,
+    "fields": {
+        "hall": 11,
+        "row_number": 4,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 37
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2078,
+    "fields": {
+        "hall": 11,
+        "row_number": 4,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 38
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2079,
+    "fields": {
+        "hall": 11,
+        "row_number": 4,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 39
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2080,
+    "fields": {
+        "hall": 11,
+        "row_number": 4,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 40
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2081,
+    "fields": {
+        "hall": 11,
+        "row_number": 5,
+        "seat_number": 1,
+        "seat_type": "standard",
+        "seat_order": 41
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2082,
+    "fields": {
+        "hall": 11,
+        "row_number": 5,
+        "seat_number": 2,
+        "seat_type": "standard",
+        "seat_order": 42
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2083,
+    "fields": {
+        "hall": 11,
+        "row_number": 5,
+        "seat_number": 3,
+        "seat_type": "standard",
+        "seat_order": 43
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2084,
+    "fields": {
+        "hall": 11,
+        "row_number": 5,
+        "seat_number": 4,
+        "seat_type": "standard",
+        "seat_order": 44
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2085,
+    "fields": {
+        "hall": 11,
+        "row_number": 5,
+        "seat_number": 5,
+        "seat_type": "standard",
+        "seat_order": 45
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2086,
+    "fields": {
+        "hall": 11,
+        "row_number": 5,
+        "seat_number": 6,
+        "seat_type": "standard",
+        "seat_order": 46
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2087,
+    "fields": {
+        "hall": 11,
+        "row_number": 5,
+        "seat_number": 7,
+        "seat_type": "standard",
+        "seat_order": 47
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2088,
+    "fields": {
+        "hall": 11,
+        "row_number": 5,
+        "seat_number": 8,
+        "seat_type": "standard",
+        "seat_order": 48
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2089,
+    "fields": {
+        "hall": 11,
+        "row_number": 5,
+        "seat_number": 9,
+        "seat_type": "standard",
+        "seat_order": 49
+    }
+},
+{
+    "model": "models.seat",
+    "pk": 2090,
+    "fields": {
+        "hall": 11,
+        "row_number": 5,
+        "seat_number": 10,
+        "seat_type": "standard",
+        "seat_order": 50
+    }
+},
+{
     "model": "models.movie",
     "pk": 1,
     "fields": {
@@ -3743,20 +7459,6 @@
 },
 {
     "model": "models.show",
-    "pk": 5,
-    "fields": {
-        "movie": 1,
-        "hall": 8,
-        "date": "2025-02-01",
-        "time": "20:00:00",
-        "standard_price": 1000.0,
-        "vip_price": 2000.0,
-        "created_at": "2025-01-31T11:59:46.009",
-        "updated_at": "2025-01-31T11:59:46.009"
-    }
-},
-{
-    "model": "models.show",
     "pk": 6,
     "fields": {
         "movie": 3,
@@ -3781,6 +7483,20 @@
         "vip_price": 5000.0,
         "created_at": "2025-01-31T12:06:35.174",
         "updated_at": "2025-01-31T12:06:35.174"
+    }
+},
+{
+    "model": "models.show",
+    "pk": 8,
+    "fields": {
+        "movie": 2,
+        "hall": 11,
+        "date": "2025-02-10",
+        "time": "11:00:00",
+        "standard_price": 1000.0,
+        "vip_price": 2000.0,
+        "created_at": "2025-01-31T12:51:05.477",
+        "updated_at": "2025-01-31T12:51:05.477"
     }
 },
 {
@@ -3826,6 +7542,21 @@
         "total_price": 2000.0,
         "created_at": "2025-01-31T12:04:24.730",
         "updated_at": "2025-01-31T12:04:24.803"
+    }
+},
+{
+    "model": "models.booking",
+    "pk": 4,
+    "fields": {
+        "show": 8,
+        "seat": 2063,
+        "customer_name": "Stepan",
+        "customer_email": "fsdfsdfs@gmail.com",
+        "customer_phone": "55979669",
+        "status": "confirmed",
+        "total_price": 1000.0,
+        "created_at": "2025-01-31T12:51:16.938",
+        "updated_at": "2025-01-31T12:51:16.940"
     }
 }
 ]
