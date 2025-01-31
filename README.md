@@ -39,6 +39,8 @@ You sould seethis output
 ```sh
 python manage.py migrate
 ```
+![image](https://github.com/user-attachments/assets/ec767820-f8ed-4ed3-839d-8d0421939fb1)
+
 
 ### **Optional: Backup data from backup.sql file **
 I have prepared database to make it easy for you to test
