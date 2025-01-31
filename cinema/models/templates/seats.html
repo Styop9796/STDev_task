@@ -196,11 +196,11 @@
     <script>
       
 
-
+        const host = window.location.origin; 
         const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
         const show_id = new URLSearchParams(window.location.search).get('show_id');
 
-        const apiUrl = `http://127.0.0.1:8000/api/get_seats/?show_id=${show_id}`;
+        const apiUrl = `${host}/api/get_seats/?show_id=${show_id}`;
         const loadingElement = document.getElementById('loading');
         const seatTableElement = document.getElementById('seat-table');
         const seatInfoElement = document.getElementById('seat-info');
@@ -213,43 +213,48 @@
         let selectedSeat = null; 
         console.log(customerEmailInput.value)
 
-        function fetchSeatData() {
-            fetch(apiUrl)
-                .then(response => response.json())
-                .then(data => {
-                    loadingElement.style.display = 'none';
-                    if (data.status === 200 && data.data.length > 0) {
-                        renderSeatTable(data.data, data.is_show_started);
-                    } else {
-                        seatTableElement.innerHTML = "<tr><td colspan='10'>No seats available.</td></tr>";
-                    }
-                })
-                .catch(error => {
-                    loadingElement.style.display = 'none';
-                    seatInfoElement.innerHTML = "<p>Error loading seat data.</p>";
-                    console.error("Error fetching data: ", error);
-                });
-        }
 
-        function renderSeatTable(seats, isShowStarted) {
-    let rows = [];
-    let columns = 10; 
+            function fetchSeatData() {
+                fetch(apiUrl)
+                    .then(response => response.json())
+                    .then(data => {
+                        loadingElement.style.display = 'none';
+                        if (data.status === 200 && data.data.length > 0) {
+                            let totalSeats = data.data.length;
+                            let cols = data.rows ; 
+                            let rows = data.columns;
+                            
+                            renderSeatTable(data.data, data.is_show_started, rows, cols);
+                        } else {
+                            seatTableElement.innerHTML = "<tr><td colspan='10'>No seats available.</td></tr>";
+                        }
+                    })
+                    .catch(error => {
+                        loadingElement.style.display = 'none';
+                        seatInfoElement.innerHTML = "<p>Error loading seat data.</p>";
+                        console.error("Error fetching data: ", error);
+                    });
+            }
+
+
+        function renderSeatTable(seats, isShowStarted, rows, cols) {
     let seatRows = [];
 
-    // Check if the show has started, and if so, make all seats unavailable (red)
-    const seatClassModifier = isShowStarted ? 'unavailable' : ''; 
-
-    for (let i = 0; i < 8; i++) { 
+    // Ensure the seat table dynamically adjusts based on rows and cols
+    for (let i = 0; i < rows; i++) {
         let row = [];
-        for (let j = 0; j < columns; j++) { 
-            const seatIndex = i * columns + j;
+        for (let j = 0; j < cols; j++) {
+            const seatIndex = i * cols + j;
             const seat = seats[seatIndex];
 
             if (seat) {
                 const seatClass = isShowStarted ? 'unavailable' : (seat.is_available ? 'available' : 'unavailable');
                 row.push(`
                     <td>
-                        <div class="seat ${seatClass}" data-seat-id="${seat.seat_id}" data-seat-price="${seat.price}" data-seat-order-number="${seat.seat_order_number}" >
+                        <div class="seat ${seatClass}" 
+                            data-seat-id="${seat.seat_id}" 
+                            data-seat-price="${seat.price}" 
+                            data-seat-order-number="${seat.seat_order_number}">
                             <div class="seat-details">
                                 ${seat.seat_order_number}<br>
                                 ${seat.price}֏
@@ -267,6 +272,8 @@
     seatTableElement.innerHTML = seatRows.join('');
     addSeatClickListener();
 }
+
+
 
         function addSeatClickListener() {
             const seats = document.querySelectorAll('.seat.available');
@@ -318,7 +325,7 @@
                 show_id: show_id
             };
 
-            fetch('http://127.0.0.1:8000/api/create_reservation/', {
+            fetch(`${host}/api/create_reservation/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halls Information</title>
     <style>
-        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -117,10 +116,10 @@
     </div>
 
     <script>
-        // Get the cinema_id from the URL query parameters
+        const host = window.location.origin; 
         const urlParams = new URLSearchParams(window.location.search);
         const cinemaId = urlParams.get('cinema_id');
-        const apiUrl = `http://127.0.0.1:8000/api/get_halls/?cinema_id=${cinemaId}`;
+        const apiUrl = `${host}/api/get_halls/?cinema_id=${cinemaId}`;
 
         const loadingElement = document.getElementById('loading');
         const hallListElement = document.getElementById('hall-list'); // Container for the hall list
@@ -145,7 +144,7 @@
                             `;
 
                             hallCard.addEventListener('click', () => {
-                                window.location.href = `http://127.0.0.1:8000/shows/?hall_id=${hall.hall_id}`;
+                                window.location.href = `${host}/shows/?hall_id=${hall.hall_id}`;
                             });
 
                             // Append the hall card to the hall list container

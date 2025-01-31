@@ -37,11 +37,14 @@ def get_seats(request):
         show_obj = Show.objects.get(id = show_id)
         seats = show_obj.get_all_seats()
         is_started = show_obj.is_started()
+        rows , columns = show_obj.get_halls_dimensions()
 
     else:
         return JsonResponse({"status":400,"message":"No hall_id"})
     return JsonResponse({"status":200,
                          "is_show_started":is_started,
+                         "rows":rows,
+                         "columns":columns,
                          "data":seats})
 
 
@@ -62,8 +65,8 @@ def create_reservation(request):
 
             if not Booking.objects.filter(show_id=show_instance, seat_id=seat_id).exists():
                 new_reservation = Booking.objects.create(
-                    show_id=show_instance, 
-                    seat_id=seat_instance,
+                    show=show_instance, 
+                    seat=seat_instance,
                     customer_name=name,
                     customer_email=email,
                     customer_phone=phone,

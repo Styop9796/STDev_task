@@ -98,10 +98,10 @@
     </div>
 
     <script>
-        // Get the hall_id from the URL query parameters
+        const host = window.location.origin; 
         const urlParams = new URLSearchParams(window.location.search);
         const hallId = urlParams.get('hall_id');
-        const apiUrl = `http://127.0.0.1:8000/api/get_shows/?hall_id=${hallId}`;
+        const apiUrl = `${host}/api/get_shows/?hall_id=${hallId}`;
 
         const loadingElement = document.getElementById('loading');
         const showListElement = document.getElementById('show-list'); // Container for the show list
@@ -134,7 +134,7 @@
                             `;
 
                             showCard.addEventListener('click', () => {
-                                window.location.href = `http://127.0.0.1:8000/seats/?show_id=${show.show_id}`;
+                                window.location.href = `${host}/seats/?show_id=${show.show_id}`;
                             });
 
 
@@ -152,7 +152,6 @@
                 });
         }
 
-        // Call the function to fetch and display the shows on page load
         fetchShowData();
     </script>
 </body>

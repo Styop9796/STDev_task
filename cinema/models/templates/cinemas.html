@@ -117,7 +117,8 @@
     </div>
 
     <script>
-        const apiUrl = "http://127.0.0.1:8000/api/get_cinemas/";
+        const host = window.location.origin; 
+        const apiUrl = `${host}/api/get_cinemas/`;
         const loadingElement = document.getElementById('loading');
         const cinemaListElement = document.getElementById('cinema-list'); // Container for the cinema list
 
@@ -149,8 +150,10 @@
 
 
                             cinemaCard.addEventListener('click', () => {
-                                window.location.href = `http://127.0.0.1:8000/halls/?cinema_id=${cinema.id}`;
-                            });
+                                    const host = window.location.origin; 
+                                    window.location.href = `${host}/halls/?cinema_id=${cinema.id}`;
+                                });
+
 
                             // Append the cinema card to the cinema list container
                             cinemaListElement.appendChild(cinemaCard);
