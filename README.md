@@ -1,6 +1,6 @@
-### ** Clone the Repository**
+### Clone the Repository
 ```sh
-git clone https://github.com/your-username/cinema-booking-app.git
+git clone https://github.com/Styop9796/STDev_task.git
 cd STDev_task
 ```
 
