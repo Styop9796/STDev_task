@@ -6,7 +6,7 @@ cd STDev_task
 
 ### **Create virtual enviroment**
 ```sh
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate  # For macOS/Linux
 venv\Scripts\activate     # For Windows
 ```
