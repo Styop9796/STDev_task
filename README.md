@@ -48,6 +48,8 @@ I have prepared database to make it easy for you to test
 ```sh
 python manage.py loaddata backup.sql
 ```
+![image](https://github.com/user-attachments/assets/f67210c8-29a7-4c5d-a57a-985a0280e96c)
+
 
 ### **Create a Superuser (For Admin Access)**
 Admin panel is available at /admin URL.Follow instructions after createsuperuser command
